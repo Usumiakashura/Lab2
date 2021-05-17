@@ -1,0 +1,65 @@
+﻿<Window x:Class="Lab2.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Lab2"
+        mc:Ignorable="d"
+        Title="Function (Lab2.1)" MinHeight="260" MinWidth="738" MaxHeight="260" MaxWidth="738" Height="260" Width="738" 
+        FontSize="20" FontFamily="Comic Sans MS">
+    <WrapPanel Background="#363636" Margin="0,0,0,-1">
+        <Grid Background="Gray" Width="200" Height="200" Margin="10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="3*"/>
+            </Grid.ColumnDefinitions>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            
+            <Label Content="x =" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="White"/>
+            <Label Content="p =" HorizontalAlignment="Center" VerticalAlignment="Center" 
+                   Foreground="White" Grid.Row="1"/>
+
+            <TextBox x:Name="textBoxX" Grid.Column="1" Margin="10" Padding="10" 
+                     Text="4,5" TextAlignment="Right" KeyDown="TextBox_KeyDown" PreviewTextInput="TextBox_PreviewTextInput" />
+            <TextBox x:Name="textBoxP" Grid.Row="1" Grid.Column="1" Margin="10" Padding="10" 
+                     Text="2,0" TextAlignment="Right" KeyDown="TextBox_KeyDown" PreviewTextInput="TextBox_PreviewTextInput" />
+            
+        </Grid>
+
+        <GroupBox Background="Gray" Margin="10" BorderThickness="0">
+            <StackPanel>
+                <TextBlock Foreground="White" FontSize="15">f(x):</TextBlock>
+                <RadioButton x:Name="radioButtonSin" 
+                             Padding="10 0" Margin="10" Foreground="White" IsChecked="True">sin</RadioButton>
+                <RadioButton x:Name="radioButtonCos" 
+                             Padding="10 0" Margin="10" Foreground="White">cos</RadioButton>
+                <RadioButton x:Name="radioButtonTan" 
+                             Padding="10 0" Margin="10" Foreground="White">tan</RadioButton>
+            </StackPanel>
+        </GroupBox>
+
+        <StackPanel Background="Gray" Margin="10">
+            <CheckBox x:Name="checkBoxMin" Margin="10" Padding="10 0" Foreground="White">min</CheckBox>
+            <CheckBox x:Name="checkBoxMax" Margin="10" Padding="10 0" Foreground="White">max</CheckBox>
+        </StackPanel>
+
+        <StackPanel>
+            
+
+            <Label x:Name="labelResult" Background="Gray" Width="250" Height="150" 
+                   Margin="10" Padding="10" Foreground="White"></Label>
+
+            <Button Background="YellowGreen" Foreground="White" 
+                    Height="40" Width="250" Margin="10 0"
+                    Click="Button_Click" BorderBrush="Transparent">Вычислить</Button>
+
+        </StackPanel>
+
+    </WrapPanel>
+
+</Window>
